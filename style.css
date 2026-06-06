@@ -386,6 +386,8 @@ button { cursor: none; font-family: inherit; }
     border-radius: var(--radius-lg); padding: 36px;
     transition: transform 0.4s cubic-bezier(0.2,1,0.3,1), border-color 0.3s, box-shadow 0.4s;
     position: relative; overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 .bento-card:hover {
     transform: translateY(-5px);
@@ -398,7 +400,7 @@ button { cursor: none; font-family: inherit; }
 .bento-dark            { background: var(--surface); }   /* убрали тёмный оттенок */
 .bento-design-highlight{ background: linear-gradient(135deg, rgba(255,45,120,0.05) 0%, var(--surface) 60%); border-color: rgba(255,45,120,0.12); }
 .card-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
-.tag-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto;}
 .tag {
     font-size: 0.78rem; font-weight: 500; padding: 5px 14px; border-radius: 50px;
     background: var(--surface-hover); border: 1px solid var(--border);
