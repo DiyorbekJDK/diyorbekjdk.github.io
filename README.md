@@ -52,17 +52,6 @@ Toggle between worlds with a smooth pill navigation – the entire UI changes it
 
 ---
 
-## 🚀 Run Locally
-
-```bash
-git clone https://github.com/diyorbekjdk/diyorbekjdk.github.io.git
-cd diyorbekjdk.github.io
-# open index.html in your favourite browser
-
-```
-No build tools, no dependencies. Just raw, fast web.
-
-
 ## 📄 License
 MIT © 2026 Diyorbek JDK.
 Use it, remix it, launch your own dual‑world portfolio.
