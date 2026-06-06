@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="preview.png" alt="Diyorbek JDK Portfolio Preview" width="100%" />
+  <img src="images/preview.png" alt="Diyorbek JDK Portfolio Preview" width="100%" />
 
   # ⚡ Diyorbek JDK · Code & Design Portfolio
 
