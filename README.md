@@ -63,7 +63,7 @@ cd diyorbekjdk.github.io
 No build tools, no dependencies. Just raw, fast web.
 
 
-📄 License
+## 📄 License
 MIT © 2026 Diyorbek JDK.
 Use it, remix it, launch your own dual‑world portfolio.
 If you do, drop a star ⭐ — it fuels the neon.
