@@ -140,8 +140,8 @@ function triggerReveal(selector) {
 }
 
 const io = new IntersectionObserver(
-  entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('playing'); }),
-  { threshold: 0.12 }
+    entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('playing'); }),
+    { threshold: 0.12 }
 );
 $$('.reveal-up').forEach(el => io.observe(el));
 
@@ -217,8 +217,8 @@ async function fetchRepos() {
   if (!repoGrid) return;
   try {
     const res = await fetch(
-      'https://api.github.com/users/diyorbekjdk/repos?sort=updated&per_page=6',
-      { headers: { Accept: 'application/vnd.github.v3+json' } }
+        'https://api.github.com/users/diyorbekjdk/repos?sort=updated&per_page=6',
+        { headers: { Accept: 'application/vnd.github.v3+json' } }
     );
     if (!res.ok) throw new Error(`GitHub API ${res.status}`);
     const repos = await res.json();
@@ -278,7 +278,7 @@ function initLightbox() {
 
     lightbox.style.display = 'flex';
     requestAnimationFrame(() =>
-      requestAnimationFrame(() => lightbox.classList.add('lb-open'))
+        requestAnimationFrame(() => lightbox.classList.add('lb-open'))
     );
 
     img.onload  = () => { img.style.display = 'block'; };
@@ -366,8 +366,8 @@ function initLightbox() {
       const z       = diff === 0 ? 10   : 10 - absD;
 
       const blur = isMobile
-        ? (absD > 0 ? 2 : 0)
-        : absD * 3;
+          ? (absD > 0 ? 2 : 0)
+          : absD * 3;
 
       slide.style.transform = `translateX(${tx}px) scale(${scale})`;
       slide.style.opacity   = opacity;
@@ -507,7 +507,7 @@ function updateBackToTop() {
 function initBackToTop() {
   if (!backToTopBtn) return;
   [codeWorldEl, designWorldEl].forEach(w =>
-    w?.addEventListener('scroll', updateBackToTop, { passive: true })
+      w?.addEventListener('scroll', updateBackToTop, { passive: true })
   );
   backToTopBtn.addEventListener('click', () => {
     const w = currentWorld === 0 ? codeWorldEl : designWorldEl;

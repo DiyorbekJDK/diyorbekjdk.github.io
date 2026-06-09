@@ -1,5 +1,5 @@
 /* ================================================
-   DIYORBEK JDK — Portfolio v2.6
+   DIYORBEK JDK — Portfolio v2.7
    Font: Syne (display) + DM Sans (body)
    ================================================ */
 
@@ -25,7 +25,7 @@
     --radius-sm: 12px;
     --radius-md: 20px;
     --radius-lg: 28px;
-    --blur: blur(20px);
+    --blur: blur(10px);
 }
 
 [data-theme="light"] {
@@ -199,40 +199,40 @@ button { cursor: none; font-family: inherit; }
 .code-bg-visual {
     position: absolute; inset: 0;
     background:
-        radial-gradient(ellipse 80% 60% at 50% 0%,  rgba(57, 255, 138, 0.06) 0%, transparent 60%),
-        radial-gradient(ellipse 50% 50% at 80% 100%, rgba(0, 180, 255, 0.05)  0%, transparent 50%),
-        #080810;
+            radial-gradient(ellipse 80% 60% at 50% 0%,  rgba(57, 255, 138, 0.06) 0%, transparent 60%),
+            radial-gradient(ellipse 50% 50% at 80% 100%, rgba(0, 180, 255, 0.05)  0%, transparent 50%),
+            #080810;
 }
 [data-theme="light"] .code-bg-visual {
     background:
-        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(57, 200, 100, 0.10) 0%, transparent 65%),
-        radial-gradient(ellipse 50% 50% at 75% 90%, rgba(30, 180, 255, 0.06) 0%, transparent 55%),
-        #ededf5;
+            radial-gradient(ellipse 80% 60% at 50% 0%, rgba(57, 200, 100, 0.10) 0%, transparent 65%),
+            radial-gradient(ellipse 50% 50% at 75% 90%, rgba(30, 180, 255, 0.06) 0%, transparent 55%),
+            #ededf5;
 }
 .code-bg-visual::after {
     content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none;
     background:
-        radial-gradient(ellipse 80% 45% at 50% 0%, rgba(8,8,16,0.20) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 40% at 50% 100%, rgba(8,8,16,0.14) 0%, transparent 55%);
+            radial-gradient(ellipse 80% 45% at 50% 0%, rgba(8,8,16,0.20) 0%, transparent 60%),
+            radial-gradient(ellipse 60% 40% at 50% 100%, rgba(8,8,16,0.14) 0%, transparent 55%);
 }
 [data-theme="light"] .code-bg-visual::after {
     background:
-        radial-gradient(ellipse 80% 45% at 50% 0%, rgba(237,237,245,0.22) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 40% at 50% 100%, rgba(237,237,245,0.14) 0%, transparent 55%);
+            radial-gradient(ellipse 80% 45% at 50% 0%, rgba(237,237,245,0.22) 0%, transparent 60%),
+            radial-gradient(ellipse 60% 40% at 50% 100%, rgba(237,237,245,0.14) 0%, transparent 55%);
 }
 
 .grid-lines {
     position: absolute; inset: 0;
     background-image:
-        linear-gradient(rgba(57, 255, 138, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(57, 255, 138, 0.04) 1px, transparent 1px);
+            linear-gradient(rgba(57, 255, 138, 0.04) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(57, 255, 138, 0.04) 1px, transparent 1px);
     background-size: 60px 60px;
     mask-image: radial-gradient(ellipse 90% 80% at 50% 0%, black 0%, transparent 70%);
 }
 [data-theme="light"] .grid-lines {
     background-image:
-        linear-gradient(rgba(57, 160, 80, 0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(57, 160, 80, 0.06) 1px, transparent 1px);
+            linear-gradient(rgba(57, 160, 80, 0.06) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(57, 160, 80, 0.06) 1px, transparent 1px);
 }
 
 .glow-orb {
@@ -254,9 +254,9 @@ button { cursor: none; font-family: inherit; }
 .mesh-grad {
     position: absolute; inset: 0;
     background:
-        radial-gradient(ellipse 60% 50% at 15% 30%, rgba(255, 45, 120, 0.12) 0%, transparent 55%),
-        radial-gradient(ellipse 50% 50% at 85% 70%, rgba(255, 140, 30, 0.10) 0%, transparent 55%),
-        radial-gradient(ellipse 40% 40% at 50% 100%, rgba(120, 0, 200, 0.08) 0%, transparent 50%);
+            radial-gradient(ellipse 60% 50% at 15% 30%, rgba(255, 45, 120, 0.12) 0%, transparent 55%),
+            radial-gradient(ellipse 50% 50% at 85% 70%, rgba(255, 140, 30, 0.10) 0%, transparent 55%),
+            radial-gradient(ellipse 40% 40% at 50% 100%, rgba(120, 0, 200, 0.08) 0%, transparent 50%);
 }
 .design-orb {
     position: absolute; border-radius: 50%;
@@ -273,12 +273,12 @@ button { cursor: none; font-family: inherit; }
 .drop {
     position: absolute; top: -90px; width: 1.5px;
     background: linear-gradient(
-        to bottom,
-        transparent              0%,
-        rgba(57, 255, 138, 0.06) 25%,
-        rgba(57, 255, 138, 0.55) 65%,
-        rgba(80, 255, 160, 0.75) 85%,
-        rgba(130, 255, 200, 0.88) 100%
+            to bottom,
+            transparent              0%,
+            rgba(57, 255, 138, 0.06) 25%,
+            rgba(57, 255, 138, 0.55) 65%,
+            rgba(80, 255, 160, 0.75) 85%,
+            rgba(130, 255, 200, 0.88) 100%
     );
     border-radius: 0 0 2px 2px;
     filter: blur(1px);
@@ -311,13 +311,37 @@ button { cursor: none; font-family: inherit; }
 
 /* ── Reveal Animations ── */
 .reveal-up {
-    opacity: 0; transform: translateY(32px);
+    /* opacity: 0; */
+    transform: translateY(32px);
     animation: revealUp 0.75s cubic-bezier(0.2, 1, 0.3, 1) forwards;
     animation-delay: calc(var(--d, 0) * 0.1s);
     animation-play-state: paused;
 }
+@keyframes revealUpMove {
+    to { transform: translateY(0); }
+}
+
+.reveal-up > * {
+    opacity: 0;
+    animation: revealUpFade 0.6s ease-out forwards;
+    /* Небольшая задержка, чтобы текст красиво проявлялся прямо во время движения карточки */
+    animation-delay: calc(var(--d, 0) * 0.1s + 0.1s);
+    animation-play-state: paused;
+}
+
+
+
 .reveal-up.playing { animation-play-state: running; }
-@keyframes revealUp { to { opacity: 1; transform: translateY(0); } }
+.reveal-up.playing > * {
+    animation-play-state: running;
+}
+@keyframes revealUp{
+    from { transform: translateY(32px); }
+    to { transform: translateY(0); }
+}
+@keyframes revealUpFade {
+    to { opacity: 1; }
+}
 
 /* ── Hero ── */
 .hero { text-align: center; width: 100%; margin-bottom: 64px; padding-top: 20px; }
@@ -379,6 +403,9 @@ button { cursor: none; font-family: inherit; }
     transition: transform 0.4s cubic-bezier(0.2,1,0.3,1), border-color 0.3s, box-shadow 0.4s;
     position: relative; overflow: hidden;
     display: flex; flex-direction: column;
+    /* ДОБАВИТЬ ЭТИ ДВЕ СТРОКИ ДЛЯ ФИКСА БАГА */
+    transform: translateZ(0);
+    will-change: transform;
 }
 .bento-card:hover {
     transform: translateY(-5px);
@@ -416,12 +443,23 @@ button { cursor: none; font-family: inherit; }
 @media (max-width: 860px) { .repo-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 540px) { .repo-grid { grid-template-columns: 1fr; } }
 .repo-card {
-    background: var(--surface); border: 1px solid var(--border);
+    /*background: var(--surface);
     backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur);
+    */
+
+    background: rgba(255, 255, 255, 0.08); /* чуть плотнее, чем surface */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.06);
+
+    border: 1px solid var(--border);
+
     border-radius: var(--radius-md); padding: 24px;
     display: flex; flex-direction: column; gap: 8px; min-height: 180px;
     transition: transform 0.35s cubic-bezier(0.2,1,0.3,1), border-color 0.3s, box-shadow 0.35s;
     border-top: 2px solid var(--code-accent); text-decoration: none; color: inherit;
+}
+[data-theme="light"] .repo-card {
+    background: rgba(255, 255, 255, 0.65);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05), inset 0 1px 0 rgba(255,255,255,0.6);
 }
 .repo-card:hover { transform: translateY(-4px); border-color: var(--code-accent); box-shadow: 0 12px 30px -8px var(--code-accent-glow); }
 .repo-card h4    { font-family: 'Syne', sans-serif; font-size: 0.98rem; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -445,12 +483,21 @@ button { cursor: none; font-family: inherit; }
 .certs-grid    { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
 .certs-single  { grid-template-columns: 1fr; max-width: 480px; }
 .cert-card {
-    display: flex; align-items: center; gap: 16px;
-    background: var(--surface); border: 1px solid var(--border);
+
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.06);
+    /* background: var(--surface);
     backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur);
+    */
+    display: flex; align-items: center; gap: 16px;
+    border: 1px solid var(--border);
     border-radius: var(--radius-md); padding: 18px 22px;
     cursor: pointer; position: relative; overflow: hidden;
     transition: transform 0.3s cubic-bezier(0.2,1,0.3,1), border-color 0.3s, box-shadow 0.3s;
+}
+[data-theme="light"] .cert-card {
+    background: rgba(255, 255, 255, 0.65);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05), inset 0 1px 0 rgba(255,255,255,0.6);
 }
 .cert-card:hover { transform: translateY(-3px); border-color: var(--code-accent-glow); box-shadow: 0 10px 28px -8px var(--code-accent-glow); }
 .cert-card-design:hover { border-color: var(--design-accent-glow); box-shadow: 0 10px 28px -8px var(--design-accent-glow); }
@@ -642,7 +689,7 @@ a.contact-card.contact-design:hover .cta-btn { box-shadow: 0 12px 28px var(--des
 @media (max-width: 760px) {
     :root {
         --content-px: 16px;
-        --blur: blur(12px);
+        --blur: blur(10px);
     }
 
     .bento-grid { grid-template-columns: 1fr; }
@@ -711,7 +758,7 @@ a.contact-card.contact-design:hover .cta-btn { box-shadow: 0 12px 28px var(--des
 
 /* ═══════════════════════════════════════════
    MOBILE PERFORMANCE & GLASS EFFECT
-   backdrop-filter kept at a soft 12px (via --blur
+   backdrop-filter kept at a soft 10px (via --blur
    override above) — removes heavy 20px cost.
 ═══════════════════════════════════════════ */
 @media (max-width: 768px), (pointer: coarse) {
@@ -726,19 +773,38 @@ a.contact-card.contact-design:hover .cta-btn { box-shadow: 0 12px 28px var(--des
 
     .code-bg-visual {
         background:
-            radial-gradient(ellipse 90% 40% at 50% 0%, rgba(57,255,138,0.06) 0%, transparent 60%),
-            #080810;
+                radial-gradient(ellipse 90% 40% at 50% 0%, rgba(57,255,138,0.06) 0%, transparent 60%),
+                #080810;
     }
     .code-bg-visual::after { display: none; }
     [data-theme="light"] .code-bg-visual {
         background:
-            radial-gradient(ellipse 90% 40% at 50% 0%, rgba(57,200,100,0.06) 0%, transparent 60%),
-            #ededf5;
+                radial-gradient(ellipse 90% 40% at 50% 0%, rgba(57,200,100,0.06) 0%, transparent 60%),
+                #ededf5;
     }
     .design-bg-visual { background: #0a080e; }
     [data-theme="light"] .design-bg-visual { background: #faf0f5; }
 }
+/* ── Точечное исправление для Hero элементов (не ломает карточки) ── */
+.hero-badge.reveal-up,
+.hero-sub.reveal-up {
+    opacity: 0;
+    animation: revealUp 0.75s cubic-bezier(0.2, 1, 0.3, 1) forwards,
+    revealUpFade 0.6s ease-out forwards;
+    animation-delay: calc(var(--d, 0) * 0.1s), calc(var(--d, 0) * 0.1s + 0.1s);
+    animation-play-state: paused;
+}
 
+.hero-badge.reveal-up.playing,
+.hero-sub.reveal-up.playing {
+    animation-play-state: running;
+}
+
+/* Отменяем раздельное проявление внутренностей баджа, чтобы он (и фон, и текст) плавно влетал как единое целое */
+.hero-badge.reveal-up > * {
+    opacity: 1;
+    animation: none;
+}
 /* ═══════════════════════════════════════════
    ACCESSIBILITY — Reduced Motion
 ═══════════════════════════════════════════ */
