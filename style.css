@@ -765,7 +765,26 @@ a.contact-card.contact-design:hover .cta-btn { box-shadow: 0 12px 28px var(--des
     .design-bg-visual { background: #0a080e; }
     [data-theme="light"] .design-bg-visual { background: #faf0f5; }
 }
+/* ── Точечное исправление для Hero элементов (не ломает карточки) ── */
+.hero-badge.reveal-up,
+.hero-sub.reveal-up {
+    opacity: 0;
+    animation: revealUp 0.75s cubic-bezier(0.2, 1, 0.3, 1) forwards,
+    revealUpFade 0.6s ease-out forwards;
+    animation-delay: calc(var(--d, 0) * 0.1s), calc(var(--d, 0) * 0.1s + 0.1s);
+    animation-play-state: paused;
+}
 
+.hero-badge.reveal-up.playing,
+.hero-sub.reveal-up.playing {
+    animation-play-state: running;
+}
+
+/* Отменяем раздельное проявление внутренностей баджа, чтобы он (и фон, и текст) плавно влетал как единое целое */
+.hero-badge.reveal-up > * {
+    opacity: 1;
+    animation: none;
+}
 /* ═══════════════════════════════════════════
    ACCESSIBILITY — Reduced Motion
 ═══════════════════════════════════════════ */
