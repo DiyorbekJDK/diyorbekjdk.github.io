@@ -25,7 +25,7 @@
     --radius-sm: 12px;
     --radius-md: 20px;
     --radius-lg: 28px;
-    --blur: blur(20px);
+    --blur: blur(10px);
 }
 
 [data-theme="light"] {
@@ -642,7 +642,7 @@ a.contact-card.contact-design:hover .cta-btn { box-shadow: 0 12px 28px var(--des
 @media (max-width: 760px) {
     :root {
         --content-px: 16px;
-        --blur: blur(12px);
+        --blur: blur(10px);
     }
 
     .bento-grid { grid-template-columns: 1fr; }
@@ -711,7 +711,7 @@ a.contact-card.contact-design:hover .cta-btn { box-shadow: 0 12px 28px var(--des
 
 /* ═══════════════════════════════════════════
    MOBILE PERFORMANCE & GLASS EFFECT
-   backdrop-filter kept at a soft 12px (via --blur
+   backdrop-filter kept at a soft 10px (via --blur
    override above) — removes heavy 20px cost.
 ═══════════════════════════════════════════ */
 @media (max-width: 768px), (pointer: coarse) {
