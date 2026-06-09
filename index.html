@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Diyorbek JDK | Code &amp; Design</title>
+
+    <!-- ── SEO ── -->
+    <meta name="description"
+          content="Diyorbek JDK — Software Engineer & Designer specialising in Android (Kotlin), Python automation, and visual branding. Available for freelance collaboration.">
+    <meta name="author" content="Diyorbek JDK">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#080810" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#f0f0f5" media="(prefers-color-scheme: light)">
+
+    <!-- ── Open Graph ── -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Diyorbek JDK | Code &amp; Design">
+    <meta property="og:description" content="Software Engineer &amp; Designer. Kotlin, Python, Branding.">
+    <meta property="og:image" content="https://diyorbekjdk.github.io/images/preview.png">
+    <meta property="og:url" content="https://diyorbekjdk.github.io">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Diyorbek JDK">
+
+    <!-- ── Twitter / X Card ── -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Diyorbek JDK | Code &amp; Design">
+    <meta name="twitter:description" content="Software Engineer &amp; Designer. Kotlin, Python, Branding.">
+    <meta name="twitter:image" content="https://diyorbekjdk.github.io/images/preview.png">
+
+    <!-- ── Favicon ── -->
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+
+    <!-- ── Fonts ── -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+
+    <!-- ── Stylesheet ── -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- ── JSON-LD Structured Data ── -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Diyorbek JDK",
+            "url": "https://diyorbekjdk.github.io",
+            "image": "https://diyorbekjdk.github.io/images/preview.png",
+            "sameAs": [
+                "https://github.com/diyorbekjdk",
+                "https://t.me/Diyorbekdavronov070072007"
+            ],
+            "jobTitle": "Software Engineer & Designer",
+            "knowsAbout": [
+                "Android Development", "Kotlin", "Java", "Jetpack Compose",
+                "Python", "Telegram Bots", "UI/UX Design", "Branding", "Figma"
+            ],
+            "description": "Software Engineer specialising in Android development (Kotlin/Java) and Python automation systems; graphic designer focused on branding and visual identity."
+        }
+    </script>
+</head>
+
+<body>
+
+<!-- ── Mobile notice ── -->
+<div id="mobile-notice" class="mobile-notice" role="alert" aria-live="polite" hidden>
+    <div class="notice-content">
+        <span class="notice-icon" aria-hidden="true">🖥</span>
+        <p>Best experienced on <strong>desktop</strong>. Try enabling <strong>Desktop Mode</strong> in your browser
+            for the full experience.</p>
+        <button id="close-notice" class="notice-close" aria-label="Dismiss notification">✕</button>
+    </div>
+</div>
+
+<!-- ── Certificate lightbox (shared between worlds) ── -->
+<div id="cert-lightbox" class="cert-lightbox" aria-modal="true" role="dialog" aria-label="Certificate preview">
+    <div class="lb-overlay" id="lb-overlay"></div>
+    <div class="lb-inner" id="lb-inner">
+        <button class="lb-close" id="lb-close" aria-label="Close certificate preview">✕</button>
+        <img id="lb-img" alt="Certificate" draggable="false">
+        <div class="lb-placeholder" id="lb-placeholder">
+            <span>📜</span>
+            <p>Add your certificate image to the <code>images/</code> folder.<br>
+                Check the <code>data-img</code> attribute on this card for the expected filename.</p>
+        </div>
+        <p class="lb-caption" id="lb-caption"></p>
+    </div>
+</div>
+
+<!-- ── Custom cursor (desktop only) ── -->
+<div class="custom-cursor" id="cursor" aria-hidden="true">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+</div>
+
+<!-- ── Ambient noise overlay ── -->
+<div class="noise-overlay" aria-hidden="true"></div>
+
+<!-- ── Back to top ── -->
+<button id="back-to-top" class="back-to-top" aria-label="Scroll back to top" hidden>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+         stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polyline points="18 15 12 9 6 15"/>
+    </svg>
+</button>
+
+<!-- ── Theme toggle ── -->
+<button id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark theme">
+    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+    </svg>
+    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="12" r="5"/>
+        <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+        <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+    </svg>
+</button>
+
+<!-- ── Navigation ── -->
+<nav class="world-switcher" id="mainSwitcher" role="navigation" aria-label="Portfolio sections">
+    <div class="nav-pill" id="navPill" aria-hidden="true"></div>
+    <button id="btn-code" class="nav-btn active" onclick="scrollToWorld(0)" aria-pressed="true">
+        <span class="nav-icon" aria-hidden="true">⌨</span>
+        <span>Logic &amp; Code</span>
+    </button>
+    <button id="btn-design" class="nav-btn" onclick="scrollToWorld(1)" aria-pressed="false">
+        <span class="nav-icon" aria-hidden="true">✦</span>
+        <span>Visual &amp; Art</span>
+    </button>
+</nav>
+
+<div class="worlds-container" id="worldsContainer">
+
+    <!-- ═══════════════ CODE WORLD ═══════════════ -->
+    <section class="world code-world" id="codeWorld" aria-label="Code &amp; Engineering portfolio">
+
+        <div class="bg-layer" aria-hidden="true">
+            <div class="code-bg-visual">
+                <div class="grid-lines"></div>
+                <div class="glow-orb orb-1"></div>
+                <div class="glow-orb orb-2"></div>
+                <div class="glow-orb orb-3"></div>
+            </div>
+            <div class="rain-container" id="rainContainer"></div>
+        </div>
+
+        <div class="content-wrapper">
+
+            <header class="hero">
+                <div class="hero-badge reveal-up" style="--d:0">
+                    <span class="badge-dot" aria-hidden="true"></span>
+                    <span>Software Engineer · Available for work</span>
+                </div>
+                <h1 class="hero-title reveal-up" style="--d:1">
+                    <span class="title-line">Diyorbek</span>
+                    <span class="title-accent">JDK</span>
+                </h1>
+                <p class="hero-sub reveal-up" style="--d:2">Python · Kotlin · Architecture</p>
+                <div class="hero-stats reveal-up" style="--d:3" aria-label="Quick stats">
+                    <div class="stat"><strong>3+</strong><span>Years coding</span></div>
+                    <div class="stat-sep" aria-hidden="true"></div>
+                    <div class="stat"><strong>10+</strong><span>Projects shipped</span></div>
+                    <div class="stat-sep" aria-hidden="true"></div>
+                    <div class="stat"><strong>∞</strong><span>Passion</span></div>
+                </div>
+            </header>
+
+            <section class="bento-grid reveal-up" style="--d:4" aria-label="Skills &amp; technologies">
+
+                <div class="bento-card bento-wide bento-highlight">
+                    <div class="card-label">Core Stack</div>
+                    <h2>Android Ecosystem</h2>
+                    <p>Building high-performance native apps with clean, scalable architecture.
+                        From MVVM to MVI patterns — certified Grade A, Digital City IT Academy, Andijan 2023.</p>
+                    <div class="tag-row">
+                        <span class="tag">Kotlin</span>
+                        <span class="tag">Java</span>
+                        <span class="tag">Jetpack Compose</span>
+                        <span class="tag">Coroutines</span>
+                        <span class="tag">MVVM</span>
+                        <span class="tag">REST API</span>
+                        <span class="tag">Room&nbsp;DB</span>
+                        <span class="tag">Hilt/DI</span>
+                    </div>
+                    <div class="card-deco" aria-hidden="true">
+                        <svg viewBox="0 0 120 80" fill="none">
+                            <rect x="10" y="20" width="30" height="40" rx="4" stroke="currentColor" stroke-opacity="0.2" stroke-width="1.5"/>
+                            <rect x="50" y="10" width="30" height="60" rx="4" stroke="currentColor" stroke-opacity="0.2" stroke-width="1.5"/>
+                            <rect x="90" y="30" width="20" height="30" rx="4" stroke="currentColor" stroke-opacity="0.2" stroke-width="1.5"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="bento-card">
+                    <div class="card-label">Backend Logic</div>
+                    <h2>Python Systems</h2>
+                    <p>Automation pipelines &amp; advanced Telegram bots with async architecture and persistent storage.</p>
+                    <div class="tag-row">
+                        <span class="tag">Aiogram</span>
+                        <span class="tag">Asyncio</span>
+                        <span class="tag">SQLite</span>
+                        <span class="tag">Automation</span>
+                    </div>
+                </div>
+
+                <div class="bento-card bento-dark">
+                    <div class="card-label">On The Horizon</div>
+                    <h2>Expanding Into</h2>
+                    <p>Exploring new frontiers in game development and systems programming.</p>
+                    <div class="tag-row">
+                        <span class="tag tag-glow">Unity / C#</span>
+                        <span class="tag tag-glow">C++ Memory</span>
+                    </div>
+                    <div class="learning-progress">
+                        <div class="prog-item">
+                            <span>Unity</span>
+                            <div class="prog-bar" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100">
+                                <div class="prog-fill" style="width:35%"></div>
+                            </div>
+                        </div>
+                        <div class="prog-item">
+                            <span>C++</span>
+                            <div class="prog-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                <div class="prog-fill" style="width:20%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="github-section reveal-up" style="--d:5" aria-label="GitHub repositories">
+                <div class="section-header">
+                    <h2 class="section-title">Repositories</h2>
+                    <a href="https://github.com/diyorbekjdk" target="_blank" rel="noopener noreferrer" class="see-all">See all →</a>
+                </div>
+                <div id="repo-grid" class="repo-grid" aria-live="polite">
+                    <div class="repo-skeleton" aria-hidden="true"><div></div><div></div><div></div></div>
+                    <div class="repo-skeleton" aria-hidden="true"><div></div><div></div><div></div></div>
+                    <div class="repo-skeleton" aria-hidden="true"><div></div><div></div><div></div></div>
+                    <div class="repo-skeleton" aria-hidden="true"><div></div><div></div><div></div></div>
+                    <div class="repo-skeleton" aria-hidden="true"><div></div><div></div><div></div></div>
+                    <div class="repo-skeleton" aria-hidden="true"><div></div><div></div><div></div></div>
+                </div>
+            </section>
+
+            <!-- Credentials -->
+            <section class="certs-section reveal-up" style="--d:6" aria-label="Certificates &amp; credentials">
+                <div class="section-header">
+                    <h2 class="section-title">Credentials</h2>
+                </div>
+                <div class="certs-grid">
+
+                    <!-- Cert 1: Android Development — phone + <code> icon -->
+                    <article class="cert-card"
+                             data-img="images/cert-android-1.jpg"
+                             data-title="Android Development — Digital City IT Academy, Andijan"
+                             role="button" tabindex="0"
+                             aria-label="View Android Development certificate">
+                        <div class="cert-thumbnail" style="background:linear-gradient(135deg,#0f1a2a,#1a0f3a)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                                 aria-hidden="true">
+                                <!-- Phone outline -->
+                                <rect x="5" y="1" width="14" height="22" rx="2.5"/>
+                                <!-- Speaker bar -->
+                                <line x1="9.5" y1="4.5" x2="14.5" y2="4.5" stroke-opacity="0.4"/>
+                                <!-- Home dot -->
+                                <circle cx="12" cy="20" r="0.7" fill="currentColor" stroke="none"/>
+                                <!-- Code brackets < > -->
+                                <polyline points="9,11 7,13.5 9,16"/>
+                                <polyline points="15,11 17,13.5 15,16"/>
+                                <!-- Slash / -->
+                                <line x1="12.8" y1="10" x2="11.2" y2="17" stroke-opacity="0.45" stroke-width="1.2"/>
+                            </svg>
+                        </div>
+                        <div class="cert-body">
+                            <div class="cert-meta-row">
+                                <span class="cert-badge grade-a">Grade A</span>
+                                <span class="cert-year">2023</span>
+                            </div>
+                            <h3>Android Development</h3>
+                            <p>Digital City IT Academy, Andijan</p>
+                        </div>
+                        <div class="cert-arrow" aria-hidden="true">
+                            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <line x1="3" y1="13" x2="13" y2="3"/>
+                                <polyline points="6 3 13 3 13 10"/>
+                            </svg>
+                        </div>
+                    </article>
+
+                    <!-- Cert 2: Android Development Framed — award medal icon -->
+                    <article class="cert-card"
+                             data-img="images/cert-android-2.jpg"
+                             data-title="Android Development (Framed) — Digital City IT Academy, Andijan"
+                             role="button" tabindex="0"
+                             aria-label="View framed Android Development certificate">
+                        <div class="cert-thumbnail" style="background:linear-gradient(135deg,#0f2a1a,#0a1a0f)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                                 aria-hidden="true">
+                                <!-- Medal circle -->
+                                <circle cx="12" cy="9" r="6.5"/>
+                                <!-- Checkmark inside -->
+                                <polyline points="8.5,9.5 11,12 15.5,7" stroke-width="1.8"/>
+                                <!-- Ribbon tails -->
+                                <path d="M8.5 15 L6.5 22.5 L12 19.5 L17.5 22.5 L15.5 15"/>
+                            </svg>
+                        </div>
+                        <div class="cert-body">
+                            <div class="cert-meta-row">
+                                <span class="cert-badge grade-a">Grade A</span>
+                                <span class="cert-year">2023</span>
+                            </div>
+                            <h3>Android Development</h3>
+                            <p>Digital City IT Academy, Andijan · Framed</p>
+                        </div>
+                        <div class="cert-arrow" aria-hidden="true">
+                            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <line x1="3" y1="13" x2="13" y2="3"/>
+                                <polyline points="6 3 13 3 13 10"/>
+                            </svg>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- Contact -->
+            <a href="https://t.me/Diyorbekdavronov070072007" class="contact-card reveal-up" style="--d:7"
+               target="_blank" rel="noopener noreferrer">
+                <div class="contact-inner">
+                    <div class="contact-text">
+                        <p class="card-label">Let's collaborate</p>
+                        <h2>Open to new projects</h2>
+                        <p class="contact-sub">Got an idea? Let's build something great together.</p>
+                    </div>
+                    <span class="cta-btn">
+                            <span>Message me</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                                <line x1="22" y1="2" x2="11" y2="13"/>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                            </svg>
+                        </span>
+                </div>
+            </a>
+
+            <!-- Footer -->
+            <footer class="site-footer">
+                <div class="footer-inner">
+                    <div class="footer-brand">
+                        <span class="footer-logo">Diyorbek JDK</span>
+                        <span class="footer-copy">© 2026</span>
+                    </div>
+                    <div class="footer-links">
+                        <a href="mailto:atomcooperans@gmail.com" class="footer-link" aria-label="Email">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                                <path d="M22 4L12 13 2 4"/>
+                            </svg>
+                            <span>Email</span>
+                        </a>
+                        <a href="https://github.com/diyorbekjdk" target="_blank" rel="noopener noreferrer"
+                           class="footer-link" aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                            </svg>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://t.me/Diyorbekdavronov070072007" target="_blank" rel="noopener noreferrer"
+                           class="footer-link" aria-label="Telegram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <line x1="22" y1="2" x2="11" y2="13"/>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                            </svg>
+                            <span>Telegram</span>
+                        </a>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+    </section>
+
+    <!-- ═══════════════ DESIGN WORLD ═══════════════ -->
+    <section class="world design-world" id="designWorld" aria-label="Design &amp; Art portfolio">
+
+        <div class="bg-layer" aria-hidden="true">
+            <div class="design-bg-visual">
+                <div class="mesh-grad"></div>
+                <div class="design-orb orb-pink"></div>
+                <div class="design-orb orb-orange"></div>
+                <div class="design-orb orb-purple"></div>
+            </div>
+            <div class="particles-container" id="particlesContainer"></div>
+        </div>
+
+        <div class="content-wrapper">
+
+            <header class="hero">
+                <div class="hero-badge reveal-up" style="--d:0">
+                    <span class="badge-dot" aria-hidden="true"></span>
+                    <span>Art Direction · Graphic Design</span>
+                </div>
+                <h1 class="hero-title reveal-up" style="--d:1">
+                    <span class="title-line">Diyorbek</span>
+                    <span class="title-accent title-design">Design</span>
+                </h1>
+                <p class="hero-sub reveal-up" style="--d:2">Branding · UI/UX · Visual Identity</p>
+            </header>
+
+            <section class="bento-grid reveal-up" style="--d:3" aria-label="Design skills">
+
+                <div class="bento-card bento-wide bento-design-highlight">
+                    <div class="card-label">Visual Identity</div>
+                    <h2>Brand &amp; Graphics</h2>
+                    <p>From conceptual logotypes to full product identities. Craft over templates, always.
+                        Certified Grade B, Digital Academy powered by Digital City, Andijan 2024.</p>
+                    <div class="tag-row">
+                        <span class="tag">Branding</span>
+                        <span class="tag">Typography</span>
+                        <span class="tag">Figma</span>
+                        <span class="tag">Photoshop</span>
+                        <span class="tag">Illustrator</span>
+                        <span class="tag">Packaging</span>
+                        <span class="tag">Motion</span>
+                    </div>
+                </div>
+
+                <div class="bento-card">
+                    <div class="card-label">Interface</div>
+                    <h2>UI Design</h2>
+                    <p>Pixel-perfect interfaces rooted in intuitive interaction and visual clarity.</p>
+                    <div class="tag-row">
+                        <span class="tag">Figma</span>
+                        <span class="tag">Prototyping</span>
+                        <span class="tag">SMM Design</span>
+                    </div>
+                </div>
+
+                <div class="bento-card">
+                    <div class="card-label">Process</div>
+                    <h2>My Approach</h2>
+                    <p>Research → Concept → Refine → Deliver. Every pixel has a reason.</p>
+                    <div class="process-steps">
+                        <span>Discover</span><span aria-hidden="true">→</span>
+                        <span>Design</span><span aria-hidden="true">→</span>
+                        <span>Ship</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Portfolio Carousel -->
+            <section class="design-showcase reveal-up" style="--d:4" aria-label="Design portfolio showcase">
+                <div class="section-header">
+                    <h2 class="section-title">Portfolio</h2>
+                    <div class="carousel-controls" role="group" aria-label="Carousel controls">
+                        <button class="carousel-btn" id="prevBtn" aria-label="Previous slide">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                 stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="15 18 9 12 15 6"/>
+                            </svg>
+                        </button>
+                        <button class="carousel-btn" id="nextBtn" aria-label="Next slide">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                 stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="9 18 15 12 9 6"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="carousel-outer" id="carouselOuter" role="region" aria-label="Portfolio slides">
+                    <div class="carousel-track" id="carouselTrack" aria-live="polite">
+
+                        <div class="slide" data-label="Branding">
+                            <img src="images/branding.jpg"
+                                 alt="Brand identity project: modern logo design with bold typography and vibrant colour palette"
+                                 draggable="false"
+                                 onerror="this.onerror=null; this.closest('.slide').classList.add('slide-img-error')">
+                            <div class="slide-overlay"><span>Branding</span></div>
+                        </div>
+
+                        <div class="slide" data-label="Packaging">
+                            <img src="images/packing.png"
+                                 alt="Packaging design for different kinds of boxes and labels"
+                                 draggable="false"
+                                 onerror="this.onerror=null; this.closest('.slide').classList.add('slide-img-error')">
+                            <div class="slide-overlay"><span>Packaging</span></div>
+                        </div>
+
+                        <div class="slide" data-label="Digital Art">
+                            <img src="images/digitalArt.png"
+                                 alt="Abstract digital artwork featuring vibrant geometric compositions"
+                                 draggable="false"
+                                 onerror="this.onerror=null; this.closest('.slide').classList.add('slide-img-error')">
+                            <div class="slide-overlay"><span>Digital Art</span></div>
+                        </div>
+
+                        <div class="slide" data-label="Sample design">
+                            <img src="images/teaDesign.jpg"
+                                 alt="Visual graphic design sample — tea packaging and label concept"
+                                 draggable="false"
+                                 onerror="this.onerror=null; this.closest('.slide').classList.add('slide-img-error')">
+                            <div class="slide-overlay"><span>Sample graphic design</span></div>
+                        </div>
+
+                        <div class="slide" data-label="Visual Identity">
+                            <img src="images/visualIdentic.png"
+                                 alt="Visual identity system: cohesive brand elements with logo variations"
+                                 draggable="false"
+                                 onerror="this.onerror=null; this.closest('.slide').classList.add('slide-img-error')">
+                            <div class="slide-overlay"><span>Visual Identity</span></div>
+                        </div>
+
+                    </div>
+                    <div class="carousel-dots" id="carouselDots" role="tablist" aria-label="Slide indicators"></div>
+                </div>
+            </section>
+
+            <!-- Telegram Portfolio Channel -->
+            <div class="portfolio-channel reveal-up" style="--d:5">
+                <div class="channel-inner">
+                    <div class="channel-text">
+                        <p class="card-label">Full Portfolio</p>
+                        <h2>All Work on Telegram</h2>
+                        <p class="channel-sub">HD-quality branding, UI, motion, and packaging — updated regularly.
+                            More than what fits here.</p>
+                    </div>
+                    <a href="https://t.me/my_desing_portfolio" class="cta-btn cta-design"
+                       target="_blank" rel="noopener noreferrer">
+                        <span>Open Channel</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                            <line x1="22" y1="2" x2="11" y2="13"/>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Credentials -->
+            <section class="certs-section certs-design reveal-up" style="--d:6" aria-label="Design certificate">
+                <div class="section-header">
+                    <h2 class="section-title">Credentials</h2>
+                </div>
+                <div class="certs-grid certs-single">
+
+                    <!-- Cert 3: Graphic Design — pen-tool / stylus icon -->
+                    <article class="cert-card cert-card-design"
+                             data-img="images/cert-design.jpg"
+                             data-title="Graphic Design — Digital Academy powered by Digital City, Andijan"
+                             role="button" tabindex="0"
+                             aria-label="View Graphic Design certificate">
+                        <div class="cert-thumbnail" style="background:linear-gradient(135deg,#2a0818,#0a0820)">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                                 aria-hidden="true">
+                                <!-- Pen / stylus body -->
+                                <path d="M4 20 L5.5 14.5 L17 3 L21 7 L9.5 18.5 Z"/>
+                                <!-- Center ridge -->
+                                <line x1="5.5" y1="14.5" x2="9.5" y2="18.5"/>
+                                <!-- Highlight along shaft -->
+                                <line x1="17" y1="3" x2="21" y2="7" stroke-opacity="0.4"/>
+                                <!-- Ink tip dot -->
+                                <circle cx="3.5" cy="20.5" r="1" fill="currentColor" stroke="none"/>
+                            </svg>
+                        </div>
+                        <div class="cert-body">
+                            <div class="cert-meta-row">
+                                <span class="cert-badge grade-b">Grade B</span>
+                                <span class="cert-year">2024</span>
+                            </div>
+                            <h3>Graphic Design</h3>
+                            <p>Digital Academy · Digital City, Andijan</p>
+                        </div>
+                        <div class="cert-arrow" aria-hidden="true">
+                            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <line x1="3" y1="13" x2="13" y2="3"/>
+                                <polyline points="6 3 13 3 13 10"/>
+                            </svg>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- Contact -->
+            <a href="https://t.me/Diyorbekdavronov070072007" class="contact-card contact-design reveal-up"
+               style="--d:7" target="_blank" rel="noopener noreferrer">
+                <div class="contact-inner">
+                    <div class="contact-text">
+                        <p class="card-label">Collaborate</p>
+                        <h2>Need a Designer?</h2>
+                        <p class="contact-sub">Let's create something visually stunning together.</p>
+                    </div>
+                    <span class="cta-btn cta-design">
+                            <span>Let's talk</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                                <line x1="22" y1="2" x2="11" y2="13"/>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                            </svg>
+                        </span>
+                </div>
+            </a>
+
+            <!-- Footer -->
+            <footer class="site-footer">
+                <div class="footer-inner">
+                    <div class="footer-brand">
+                        <span class="footer-logo footer-logo-design">Diyorbek Design</span>
+                        <span class="footer-copy">© 2026</span>
+                    </div>
+                    <div class="footer-links">
+                        <a href="mailto:atomcooperans@gmail.com" class="footer-link" aria-label="Email">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                                <path d="M22 4L12 13 2 4"/>
+                            </svg>
+                            <span>Email</span>
+                        </a>
+                        <a href="https://t.me/my_desing_portfolio" target="_blank" rel="noopener noreferrer"
+                           class="footer-link" aria-label="Design portfolio channel">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <line x1="22" y1="2" x2="11" y2="13"/>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                            </svg>
+                            <span>Portfolio</span>
+                        </a>
+                        <a href="https://t.me/Diyorbekdavronov070072007" target="_blank" rel="noopener noreferrer"
+                           class="footer-link" aria-label="Telegram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <line x1="22" y1="2" x2="11" y2="13"/>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                            </svg>
+                            <span>Telegram</span>
+                        </a>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+    </section>
+
+</div><!-- /worlds-container -->
+
+<script src="script.js"></script>
+</body>
+</html>
